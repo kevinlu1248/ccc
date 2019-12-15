@@ -68,3 +68,9 @@ class Matrix:
 # eg.
 # print(Matrix([[1, 1], [1, 0]]) ** 1234)
 
+n = int(input())
+if n <= 2:
+    print(1)
+else:
+    arr = Matrix([[1, 1], [1, 0]]) ** (n - 2)
+    print(arr.array[0][0] + arr.array[0][1])
