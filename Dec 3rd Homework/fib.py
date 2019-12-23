@@ -68,6 +68,7 @@ class Matrix:
 # eg.
 # print(Matrix([[1, 1], [1, 0]]) ** 1234)
 
+start = time.time()
 n = int(input())
 if n <= 2:
     print(1)
