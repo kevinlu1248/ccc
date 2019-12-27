@@ -1,32 +1,45 @@
 # quick fibonacci sequence
 
-'''
+
 import time
 p = 1000000007
+
 
 # quick exponentiation (mod 1000000007) (with integers)
 # outputs x ^ n
 def exp(x, n):
-    i, res = 1, x
-    while 2 * i < n:
-        i *= 2
-        res = res ** 2 % p
-    while i < n:
-        i += 1
-        res = res * x % p
-    return res
+    res = 1
+    x %= p
+    while n:
+        if res % 2:
+            res *= x
+            res %= p
+        x *= x
+        x %= p
+        n >>= 1
+    return res % p
+    # i, res = 1, x
+    # while 2 * i < n:
+    #     i *= 2
+    #     res = res ** 2 % p
+    # while i < n:
+    #     i += 1
+    #     res = res * x % p
+    # return res
 
 # quick exponentiation
 start = time.time()
-print(exp(12345, 100000))
+base, exponent = 2, 1000000000
+print(exp(base, exponent))
 print(time.time() - start)
 
 # regular exponentiation
 start = time.time()
-print(12345 ** 100000 % p)
+print(base ** exponent % p)
 print(time.time() - start)
-'''
 
+
+'''
 from itertools import product
 p = 1000000007
 
@@ -51,16 +64,24 @@ class Matrix:
         return Matrix(res)
 
     def __pow__(self, n):
-        if n == 2:
-            return self * self
-        i, res = 1, self
-        while i * 2 < n:
-            i *= 2
-            res **= 2
-        while i < n:
-            i += 1
-            res *= self
+        multiplier = Matrix(self.array)
+        res = Matrix(self.array)
+        while n:
+            if n % 2 == 1: res *= multiplier
+            multiplier *= multiplier
+            n >>= 1
         return res
+
+        # if n == 2:
+        #     return self * self
+        # i, res = 1, self
+        # while i * 2 < n:
+        #     i *= 2
+        #     res **= 2
+        # while i < n:
+        #     i += 1
+        #     res *= self
+        # return res
 
     def __repr__(self):
         return "\n".join(map(str, self.array))
@@ -75,3 +96,5 @@ if n <= 2:
 else:
     arr = Matrix([[1, 1], [1, 0]]) ** (n - 2)
     print(arr.array[0][0] + arr.array[0][1])
+
+'''
