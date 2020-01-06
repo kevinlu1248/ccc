@@ -23,8 +23,8 @@ int N, arr[110], res[110];
 int main() {
     scanf("%d\n", &N);
     for (int i = 0; i < N; i++) {
-        printf("%d\n", i);
         scanf("%d\n", &arr[i]);
+        printf("%d %d\n", i, arr[i]);
     }
 //    sort(arr, arr + N);
 //    if (N % 2) {
