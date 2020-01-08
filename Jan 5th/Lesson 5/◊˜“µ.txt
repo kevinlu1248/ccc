@@ -1,0 +1,7 @@
+阅读2017S5.cpp，会在1月7日24点前补充完整注释。
+用整块时间计时完成2015J1-2015J5：
+https://dmoj.ca/problem/ccc15j1
+https://dmoj.ca/problem/ccc15j2
+https://dmoj.ca/problem/ccc15j3
+https://dmoj.ca/problem/ccc15j4
+https://dmoj.ca/problem/ccc15j5
