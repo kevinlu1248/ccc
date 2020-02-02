@@ -30,7 +30,7 @@ N
 //#include <stack>
 #include <bits/stdc++.h>
 using namespace std;
-int t, n, x, i, c, a[100010], s_index;
+int t, n, x, i, c, s[100010], s_index;
 //stack<int> s;
 
 typedef struct Stack{
@@ -41,26 +41,26 @@ typedef struct Stack{
 	}
 }Stack;
 
-// stack implementation
-//bool empty(int s[]) {
-//	return s[0] == 0;
-//}
-//
-//int top(int s[]) {
-//	return s[s_index];
-//}
-//
-//void pop(int s[]) {
-//	s[s_index--] = 0;
-//}
-//
-//void push(int s[], int x) {
-//	s[++s_index] = x;
-//}
-//
-//void empty_stack(int s[]) {
-//	for (int j ;s[j] != 0;) s[j++] = 0;
-//}
+ //stack implementation
+bool empty(int s[]) {
+	return s[0] == 0;
+}
+
+int top(int s[]) {
+	return s[s_index];
+}
+
+void pop(int s[]) {
+	s[s_index--] = 0;
+}
+
+void push(int s[], int x) {
+	s[++s_index] = x;
+}
+
+void empty_stack(int s[]) {
+	for (int j ;s[j] != 0;) s[j++] = 0;
+}
 
 bool solve() {
 	i = 1, c = 1; empty_stack(a);
