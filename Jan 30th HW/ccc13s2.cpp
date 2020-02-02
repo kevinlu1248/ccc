@@ -53,7 +53,7 @@ int main() {
 	for (int i = 0; i < c; i++) scanf("%d", &arr[i]);
 	sort(arr, arr + c, cmp);
 	//for (int i = 0; i < c; i++) printf("%d\n", arr[i]);
-	while ((t -= arr[c--]) > 0) ans++;
+	while ((t -= arr[--c]) >= 0 && c) {ans++;}
 	printf("%d", ans);
 	return 0;
 }
