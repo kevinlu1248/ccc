@@ -51,40 +51,42 @@ const int map[4][4] = { // map[i][j] is the corresponding game_no between i and 
 		{2, 4, 5, -1}
 };
 
-void printScores() {
+void printScores(int game_no) {
 	for (int score: scores) printf("%d, ", score);
-	printf("\n");
+	printf("game_no: %d\n", game_no);
 }
 
 // checks if won
 int didWin() {
 	for (int i = 0; i < 4; i++)
-		if (i != t && scores[t] <= scores[i])
+		if (i != t - 1 && scores[t - 1] <= scores[i])
 			return 0;
 	return 1;
 }
 
 int solve(int game_no){
-	printScores();
+	//printScores(game_no);
 	if (game_no == 6) return didWin();
 
 	int ans = 0;
-	while (played[game_no]) {game_no++;}
+	//do {game_no++;} while (played[game_no]);
+	while (played[game_no]) game_no++;
+	if (game_no >= 6) return didWin();
 	int t1 = games[game_no][0], t2 = games[game_no][1];
 
 	// team 1 wins
 	scores[t1] += 3;
-	ans += solve(game_no);
+	ans += solve(game_no + 1);
 	scores[t1] -= 3;
 
 	// team 2 wins
 	scores[t2] += 3;
-	ans += solve(game_no);
+	ans += solve(game_no + 1);
 	scores[t2] -= 3;
 
 	// tie
 	scores[t1]++; scores[t2]++;
-	ans += solve(game_no);
+	ans += solve(game_no + 1);
 	scores[t1]--; scores[t2]--;
 
 	return ans;
@@ -135,16 +137,19 @@ int solve(int game_no){
 
 int main() {
 	scanf("%d%d", &t, &g);
-	printf("%d, %d", t, g);
 
 	// inputting
 	for (int i = 0; i < g; i++) {
-		scanf("%d%d%d%d", a, b, sa, sb);
+		scanf("%d%d%d%d", &a, &b, &sa, &sb);
+		//printf("%d %d %d\n", a, b, map[a][b]);
 		if (sa > sb) scores[a - 1] += 3;
-		if (sb > sa) scores[b - 1] += 3;
+		else if (sb > sa) scores[b - 1] += 3;
 		else {scores[a - 1]++; scores[b - 1]++;}
-		played[map[a][b]];
+		played[map[a - 1][b - 1]] = true;
  	}
+
+	//for (int i = 0; i < 6; i++) printf("%d", played[i]);
+	//for (int i = 0; i < 4; i++) printf("%d", scores[i]);
 
 	printf("%d\n", solve(0));
 	return 0;

@@ -60,6 +60,7 @@ typedef struct Segment{
             return make_pair(1, Point());//平行
         }
         Point res;
+        //TODO: ?
         double t = ((s-a.s) ^ (a.s-a.e)) / ((s-e) ^ (a.s-a.e));
         res.x = s.x + t*(e.x-s.x);//t*e.x + (1-t)*s.x
         res.y = s.y + t*(e.y-s.y);//t*e.y + (1-t)*s.y
@@ -76,6 +77,7 @@ typedef struct Segment{
         sgn((a.s-e)^(s-e))*sgn((a.e-e)^(s-e)) <= 0;
     }
     //点到直线距离，返回垂线段的垂足
+    //TODO: ?
     Point dis(const Point &p)const{
         Point res;
         double t = ((p-s)*(e-s))/((e-s)*(e-s));
@@ -100,6 +102,7 @@ bool OnSegment(Point p, Segment L){
 }
 //判断一个点是否在凸多边形内
 //0表示在边界上，-1表示在外部，1表示在内部
+//TODO: ?
 int checkInConvexPolygon(Point a, vector<Point> ps){
     for(int i=0;i<ps.size();i++){
         int j = (i+1)%ps.size(); // j = i + 1
