@@ -93,7 +93,7 @@ double rotating_calipers(vector<Point> convex){
     return ans;
 }
 
-Point outerCenter(Point a, Point b, Point c){
+Point outerCenter(Point a, Point b, Point c) { // how do you prove this?
     Point db = b - a;
     double tb = db*db/2;
     Point dc = c - a;
