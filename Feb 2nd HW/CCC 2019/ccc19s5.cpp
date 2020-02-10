@@ -35,15 +35,23 @@ void solve(){
     for (int i = 1; i <= n - k; i++) {
         sm[i][0] = sm[i - 1][0];
         for (int j = 0; j < k; j++) {
-            printf("sub: (%d, %d)\n", j + i - 1, j);
+//            printf("sub: (%d, %d)\n", j + i - 1, j);
             sm[i][0] -= tri[j + i - 1][j];
-            printf("add: (%d, %d)\n", i + k - 1, j);
+//            printf("add: (%d, %d)\n", i + k - 1, j);
             sm[i][0] += tri[i + k - 1][j];
         }
     }
-    for (int l = 1; l < n - k; l++) {
-        sm[0][l] = sm[l - 1][l - 1];
-
+    for (int l = 1; l <= n - k; l++) {
+        for (int j = l; j <= n - k; j++)  {
+            printf("Setting sm[%d][%d] to %d\n", j, l, sm[j-1][l-1]);
+            sm[j][l] = sm[j - 1][l - 1];
+            for (int i = 0; i < k; i++) {
+                printf("sub: (%d, %d) = %d\n", j + i - 1, l - 1, tri[j + i - 1][l - 1]);
+                sm[j][l] -= tri[j + i - 1][l - 1];
+                printf("add: (%d, %d) = %d\n", j + k - 1, i + 1, tri[j + k - 1][i + 1]);
+                sm[j][l] += tri[j + k - 1][i + l];
+            }
+        }
 
 //        for (int i = 0; i < k; i++) {
 //            for (int j = 0; j <= i; j++)
