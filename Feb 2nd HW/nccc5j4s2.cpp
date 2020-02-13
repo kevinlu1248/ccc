@@ -4,10 +4,12 @@
 
 #include <cstdio>
 #include <algorithm>
+#include <w32api/mmcobj.h>
 // <bits/stdc++.h>
 using namespace std;
 const int N = 1010;
-int n, arr[N], cnt;
+int n, cnt;
+Node arr;
 
 int main() {
     scanf("%d", &n);

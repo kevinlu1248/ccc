@@ -22,10 +22,12 @@ Copy
 #include <cstdio>
 #include <algorithm>
 #include <functional>
+#include <w32api/mmcobj.h>
 // <bits/stdc++.h>
 using namespace std;
 const int K = 1010;
-int n, arr[K], dis[K], k, ans = 1000000;
+int n, dis[K], k, ans = 1000000;
+Node arr;
 
 int main() {
     scanf("%d", &n);

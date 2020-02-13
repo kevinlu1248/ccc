@@ -11,10 +11,12 @@
 
 #include <cstdio>
 #include <algorithm>
+#include <w32api/mmcobj.h>
 // <bits/stdc++.h>
 using namespace std;
 const int N = 110;
-int n, med, arr[N], arr2[N];
+int n, med, arr2[N];
+Node arr;
 
 int main() {
     scanf("%d", &n); med = (n + 1) / 2 - 1;

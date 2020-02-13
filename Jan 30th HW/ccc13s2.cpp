@@ -39,10 +39,12 @@ Copy
 
 #include <cstdio>
 #include <algorithm>
+#include <w32api/mmcobj.h>
 //#include <bits/stdc++.h>
 using namespace std;
 const int C = 110;
-int c, t, arr[C], ans;
+int c, t, ans;
+Node arr;
 
 bool cmp(int a, int b) {
 	return a > b;

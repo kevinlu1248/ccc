@@ -41,10 +41,12 @@ Copy
 #include <vector> // for edges
 #include <queue> // for bfs
 #include <cstring> // for memset
+#include <w32api/mmcobj.h>
 //#include <bits/stdc++.h>
 using namespace std;
 const int N = 1010, M = 5010;
-int arr[M][4], lengths[M], n, m, k, S, T, ans;
+int lengths[M], n, m, k, S, T, ans;
+Node arr;
 
 typedef struct T_Edge {
 	int pos, from, to; // s and t are start and end

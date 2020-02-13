@@ -4,9 +4,12 @@
 
 #include <cstdio>
 #include <algorithm>
+#include <w32api/mmcobj.h>
 // <bits/stdc++.h>
 using namespace std;
-int c, v, h, arr[2][2] = {{1, 2}, {3, 4}};
+int c, v, h;
+Node arr = {{1, 2},
+            {3, 4}};
 
 int main() {
     while (true) {

@@ -77,11 +77,13 @@
 #include <algorithm>
 #include <queue>
 #include <string.h>
+#include <w32api/mmcobj.h>
 // <bits/stdc++.h>
 using namespace std;
 const int K = 30, N = 40000000;
 int k;
-bool arr[K], vis[N];
+bool vis[N];
+Node arr;
 
 typedef struct Bstr {
     bool arr[K];

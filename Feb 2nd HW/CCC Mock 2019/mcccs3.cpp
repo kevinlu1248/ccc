@@ -37,12 +37,13 @@
 
 #include <cstdio>
 #include <algorithm>
+#include <w32api/mmcobj.h>
 //#include <vector>
 // <bits/stdc++.h>
 using namespace std;
 const int R = 1010;
 int n, t, mx = 0, mx2 = 0;
-pair<int, int> arr[R]; // id, c
+Node arr; // id, c
 
 int absd(int a, int b) {return (a > b) ? (a - b) : (b - a);}
 bool cmp(pair<int, int> a, pair<int, int> b) {return a.second > b.second;}

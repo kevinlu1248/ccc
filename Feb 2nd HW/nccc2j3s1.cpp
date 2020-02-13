@@ -16,9 +16,11 @@
 #include <cstdio>
 //#include <queue>
 #include <algorithm>
+#include <w32api/mmcobj.h>
 // <bits/stdc++.h>
 using namespace std;
-int n, mx, sm, ans1, ans2, arr[50];
+int n, mx, sm, ans1, ans2;
+Node arr;
 
 void solve2() {
     for (int i = 0; i < n; i++) scanf("%d", &arr[i]);

@@ -38,11 +38,12 @@ unknown
 #include <algorithm>
 #include <vector>
 #include <queue>
+#include <w32api/mmcobj.h>
 //#include <bits/stdc++.h>
 using namespace std;
 const int N = 1000010;
 int n, m, x, y, p, q;
-vector<int> arr[N];
+Node arr;
 bool vis[N];
 
 bool bfs(int s, int t) {

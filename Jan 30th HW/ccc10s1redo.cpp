@@ -4,10 +4,12 @@
 
 #include <cstdio>
 #include <algorithm>
+#include <w32api/mmcobj.h>
 //#include <bits/stdc++.h>
 using namespace std;
 const int N = 100010;
-int n, r, s, d, arr[N][2]; // arr[i] is {id, value}
+int n, r, s, d;
+Node arr; // arr[i] is {id, value}
 char name[N][22];
 
 char lower(char c) {

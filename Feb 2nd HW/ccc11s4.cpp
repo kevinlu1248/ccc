@@ -11,9 +11,11 @@
 
 #include <cstdio>
 #include <algorithm>
+#include <w32api/mmcobj.h>
 // <bits/stdc++.h>
 using namespace std;
-int arr[2][2][4], ans; // donor/receiver, +/-, type
+int ans;
+Node arr; // donor/receiver, +/-, type
 
 int main() {
     for (int i = 0; i < 2; i++)

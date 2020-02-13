@@ -13,10 +13,12 @@
 #include <cstdio>
 #include <algorithm>
 #include <queue>
+#include <w32api/mmcobj.h>
 // <bits/stdc++.h>
 using namespace std;
 const int N = 1000000010, K = 1000010;
-int n, k, cnt = 0, inp, arr[K];
+int n, k, cnt = 0, inp;
+Node arr;
 vector<int> v;
 
 int main() {

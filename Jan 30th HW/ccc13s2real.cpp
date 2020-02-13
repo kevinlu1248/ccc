@@ -40,10 +40,12 @@ Copy
 
 #include <cstdio>
 #include <algorithm>
+#include <w32api/mmcobj.h>
 //#include <bits/stdc++.h>
 using namespace std;
 const int N = 100010;
-int n, w, arr[N];
+int n, w;
+Node arr;
 
 int solve() {
 	if (n <= 4) {

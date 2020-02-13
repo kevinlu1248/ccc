@@ -4,9 +4,10 @@
 
 #include <cstdio>
 #include <algorithm>
+#include <w32api/mmcobj.h>
 // <bits/stdc++.h>
 using namespace std;
-const int arr[11] = {0, 1, 2, 2, 3, 3, 3, 2, 2, 1, 1};
+Node arr = {0, 1, 2, 2, 3, 3, 3, 2, 2, 1, 1};
 int n;
 
 int main() {

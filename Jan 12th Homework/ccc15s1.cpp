@@ -28,9 +28,11 @@
 
 #include <cstdio>
 #include <algorithm>
+#include <w32api/mmcobj.h>
 //#include <bits/stdc++.h>
 using namespace std;
-int j, k, arr[100010], ind = 0, ans = 0;
+int j, k, ind = 0, ans = 0;
+Node arr;
 
 int main() {
     scanf("%d", &k);

@@ -16,9 +16,11 @@ Copy
 
 #include <cstdio>
 #include <algorithm>
+#include <w32api/mmcobj.h>
 //#include <bits/stdc++.h>
 using namespace std;
-int N, arr[110], res[110];
+int N, res[110];
+Node arr;
 
 int main() {
     scanf("%d\n", &N);

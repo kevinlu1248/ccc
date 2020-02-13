@@ -62,9 +62,11 @@ Copy
 //#include <iostream>
 #include <algorithm>
 #include <numeric>
+#include <w32api/mmcobj.h>
 //#include <bits/stdc++.h>
 using namespace std;
-int Q, arr[201], N;
+int Q, N;
+Node arr;
 
 int main() {
     scanf("%d%d", &Q, &N);

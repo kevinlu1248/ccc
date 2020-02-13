@@ -54,11 +54,12 @@ No
 
 #include <cstdio>
 #include <algorithm>
+#include <w32api/mmcobj.h>
 //#include <bits/stdc++.h>
 using namespace std;
 const int N = 40;
 int n;
-char arr[N][N];
+Node arr;
 
 int map(int i, int j) {
 	char c = arr[i][j];

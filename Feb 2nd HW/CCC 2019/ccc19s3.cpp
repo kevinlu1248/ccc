@@ -27,10 +27,12 @@ X 16 22
 #include <cstdio>
 #include <algorithm>
 #include <vector>
+#include <w32api/mmcobj.h>
 // <bits/stdc++.h>
 using namespace std;
 const int U = (1e9) + 1;
-int arr[3][3], xs;
+int xs;
+Node arr;
 char c, cs[8];
 vector<pair<int, int>> xpos;
 
