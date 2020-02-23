@@ -100,4 +100,6 @@ add_executable(ride USACO/ride.cpp)
 add_executable(ridetest USACO/ridetest.cpp)
 
 add_executable(breedflip USACO/breedflip.cpp)
-add_executable(swap USACO/swap.cpp)
+add_executable(swap USACO/silver_feb_2020/swap.cpp)
+
+add_executable(clocktree USACO/silver_feb_2020/clocktree.cpp)
